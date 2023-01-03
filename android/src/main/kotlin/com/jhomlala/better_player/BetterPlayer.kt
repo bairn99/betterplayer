@@ -604,6 +604,10 @@ internal class BetterPlayer(
                     width = exoPlayer.videoFormat?.height
                     height = exoPlayer.videoFormat?.width
                 }
+                //将rotation传回到Flutter端
+                if(rotationDegrees == 180) {
+                    event["rotationCorrection"] = rotationDegrees
+                }
                 event["width"] = width
                 event["height"] = height
             }
